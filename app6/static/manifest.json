@@ -1,0 +1,17 @@
+{
+    "name": "Casino Aviator",
+    "short_name": "Casino Aviator",
+    "start_url": "/pwa",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#ff2d2d",
+    "background_color": "#ff2d2d",
+    "icons": [
+      {
+        "src": "/static/img/icon.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+}

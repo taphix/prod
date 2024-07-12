@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="mobile-web-app-capable" content="yes">
+	  <meta name="apple-mobile-web-app-capable" content="yes">
+	  <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="application-name" content="Aviator Game">
+    <meta name="apple-mobile-web-app-title" content="Aviator Game">
+    <meta name="description" content="To achieve the status of the ultimate Aviator, you must strike a perfect balance between strength and speed. At the bottom of our website, you will discover valuable links and resources designed to enhance your Avia X experience. Explore our FAQ section for solutions to common queries, or access our support page for any assistance you may require. Additionally, you can access our social media platforms to engage with fellow Aviator enthusiasts and remain informed about the latest developments and announcements. We appreciate your selection of Avia X and trust that you will relish your journey with us! Keep in mind that the sky is your only limit, so set your sights high and strive to become the ultimate Aviator. Best of luck!">
+    <meta name="theme-color" content="#ff0000">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/png">
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/png">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="manifest" href="/manifest.json">
+    <title>Fortune Tiger</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-box">
+          <img src="{{url_for('static', filename='img/logo.png')}}" alt="site-logo" />
+          <div class="logo--info">
+            <h1>Fortune Tiger</h1>
+            <h2>Fortune Tiger Ltd.</h2>
+            <p class="title-info">Contém anúncios · compras no aplicativo</p>
+          </div>
+        </div>
+
+        <div class="reiting">
+          <span class="review">
+            <p class="for-font">
+              4.6<i class="material-icons custom-icon star-icon">star</i>
+            </p>
+            <p>3.8K comentários</p>
+          </span>
+          <span class="review">
+            <p class="for-font">160K+</p>
+            <p>Downloads</p>
+          </span>
+          <span class="review">
+            <p><img class="icon18" src="{{url_for('static', filename='img/other_18.png')}}" alt="18+" /></p>
+            <p>Avaliado para 18+ <i class="material-icons custom-icon">info</i></p>
+          </span>
+        </div>
+        <div class="buttons">
+          <button class="installBtn" id="init">A carregar...</button>
+          <button>
+            <img src="{{url_for('static', filename='img/image.png')}}" alt="favourite" />Adicionar à lista de desejos
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="photos">
+        <div class="container">
+          <div class="photos-top">
+            <p>
+              <i class="material-icons custom-icon laptop-icon">dispositivos</i>  Este aplicativo está disponível para todos os seus dispositivos.
+            </p>
+          </div>
+
+          <div class="photos-bottom">
+            <img src="{{url_for('static', filename='img/fir.png')}}" alt="image" />
+            <img src="{{url_for('static', filename='img/sec.png')}}" alt="image" />
+            <img src="{{url_for('static', filename='img/thr.png')}}" alt="image" />
+            <img src="{{url_for('static', filename='img/fors.png')}}" alt="image" />
+            <img src="{{url_for('static', filename='img/fivs.png')}}" alt="image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container">
+          <div class="content--info">
+            <h2 class="content--title">
+              Sobre este jogo <i class="material-icons">arrow_forward</i>
+            </h2>
+            <p class="content--text">
+          Pegue sua sorte com Fortune Tiger
+            </p>
+
+            <p class="content--text second-text">
+              No final do nosso site, você encontrará links valiosos e recursos
+projetados para aprimorar sua experiência com o Tiger. Explore a seção de
+Perguntas Frequentes para soluções para dúvidas comuns ou acesse nossa página
+de suporte para qualquer assistência que você possa precisar. Além disso, você
+pode acessar nossas plataformas de mídia social para interagir com outros
+entusiastas do Tiger e ficar informado sobre os últimos desenvolvimentos e
+anúncios.
+              <br />
+              <sub>...</sub>
+            </p>
+          </div>
+
+          <div class="update--date">
+            <p>Atualizado em</p>
+            <span>24 de maio de 2024</span>
+          </div>
+
+          <div class="content--info">
+            <h2 class="content--title second--title-content">
+              Segurança de dados <i class="material-icons">seta para frente</i>
+            </h2>
+            <p class="content--text">
+              Nesta seção, os desenvolvedores podem especificar como os aplicativos coletam e utilizam dados.
+            </p>
+          </div>
+
+          <div class="more-information">Sem informações.</div>
+        </div>
+      </section>
+
+      <section class="ratings">
+        <div class="container">
+          <h2 class="content--title second--title-content">
+            Classificações e avaliações <i class="material-icons">Seta para a frente</i>
+          </h2>
+
+          <div class="rating-range">
+            <div class="rating-box">
+              <div class="rating">
+                <span>4.6 </span>
+              </div>
+              <div class="stars">
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star_half</span>
+              </div>
+              <div class="reviews">3.8K avaliações</div>
+            </div>
+
+            <div class="bars">
+              <div class="bar bar-5">
+                <div class="bar-label">5</div>
+                <div class="bar-bg">
+                  <div class="bar-fg"></div>
+                </div>
+              </div>
+              <div class="bar bar-4">
+                <div class="bar-label">4</div>
+                <div class="bar-bg">
+                  <div class="bar-fg"></div>
+                </div>
+              </div>
+              <div class="bar bar-3">
+                <div class="bar-label">3</div>
+                <div class="bar-bg">
+                  <div class="bar-fg"></div>
+                </div>
+              </div>
+              <div class="bar bar-2">
+                <div class="bar-label">2</div>
+                <div class="bar-bg">
+                  <div class="bar-fg"></div>
+                </div>
+              </div>
+              <div class="bar bar-1">
+                <div class="bar-label">1</div>
+                <div class="bar-bg">
+                  <div class="bar-fg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="review--cards">
+        <div class="container">
+          <div class="review-container">
+            <div class="review-header">
+              <img src="{{url_for('static', filename='img/comment1.png')}}" alt="User Image" />
+              <div class="name">Lucas Santos</div>
+              <span class="material-icons menu-icon">more_vert</span>
+            </div>
+            <div class="review-rating">
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <div class="date">28 de maio de 2024</div>
+            </div>
+            <div class="review-text">
+              Não costumo fazer avaliações com frequência, mas o Tiger merece. É empolgante e as vitórias são ótimas. Este aplicativo é imperdível!
+            </div>
+            <div class="review-footer">
+              <div class="helpful-count">
+                456 pessoas acharam esta avaliação útil
+              </div>
+              <div class="helpful-buttons">
+                Você achou isso útil?
+                <button>Sim</button>
+                <button>Não</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="answer">
+            <div class="answer-title-box">
+              <h4>Fortune Tiger Ltd.</h4>
+              <p>29 de maio de 2024</p>
+            </div>
+            <p>
+              Obrigado pela sua avaliação positiva! Estamos felizes que este jogo traga empolgação e diversão às suas sessões de jogo. Desejando a você muitas grandes vitórias!
+            </p>
+          </div>
+
+          <div class="review-container">
+            <div class="review-header">
+              <img src="{{url_for('static', filename='img/comment2.png')}}" alt="User Image" />
+              <div class="name">Gabriel Silva</div>
+              <span class="material-icons menu-icon">mais_vert</span>
+            </div>
+            <div class="review-rating">
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star_half</span>
+              <div class="date">28 de maio de 2024</div>
+            </div>
+            <div class="review-text">
+              Eu me tornei viciado neste jogo desde o primeiro momento que joguei. Fiquei agradavelmente surpreso
+            </div>
+            <div class="review-footer">
+              <div class="helpful-count">
+                5.1 mil pessoas acharam esta avaliação útil
+              </div>
+              <div class="helpful-buttons">
+                Você achou isso útil?
+                <button>Sim</button>
+                <button>Não</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="answer">
+            <div class="answer-title-box">
+              <h4>Fortune Tiger Ltd.</h4>
+              <p>28 de maio de 2024</p>
+            </div>
+            <p>
+              Obrigado pela sua avaliação positiva! Estamos felizes que este jogo traga empolgação e diversão às suas sessões de jogo. Desejando a você muitas grandes vitórias!
+            </p>
+          </div>
+
+          <div class="review-container">
+            <div class="review-header">
+              <img src="{{url_for('static', filename='img/comment3.png')}}" alt="User Image" />
+              <div class="name">Pedro Pereira</div>
+              <span class="material-icons menu-icon">more_vert</span>
+            </div>
+            <div class="review-rating">
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star_half</span>
+              <div class="date">28 de maio de 2024</div>
+            </div>
+            <div class="review-text">
+             Desde o bônus de inscrição até as grandes vitórias, o Fortune Tiger superou todas as minhas expectativas. É assim que os jogos de cassino deveriam ser!
+            </div>
+            <div class="review-footer">
+              <div class="helpful-count">
+                3.5 mil pessoas acharam esta avaliação útil
+              </div>
+              <div class="helpful-buttons">
+                Você achou isso útil?
+                <<button>Sim</button>
+                <button>Não</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="answer">
+            <div class="answer-title-box">
+              <h4>Fortune Tiger Ltd.</h4>
+              <p>27 de maio de 2024</p>
+            </div>
+            <p>Obrigado pela sua avaliação positiva!</p>
+          </div>
+
+          <div class="review-container">
+            <div class="review-header">
+              <img src="{{url_for('static', filename='img/comment4.png')}}" alt="User Image" />
+              <div class="name">Matheus Almeida</div>
+              <span class="material-icons menu-icon">more_vert</span>
+            </div>
+            <div class="review-rating">
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <div class="date">28 de maio de 2024</div>
+            </div>
+            <div class="review-text">
+              Acontece que você pode facilmente ganhar no Tiger se tiver o seu
+              estratégia própria. Não acreditei, mas acabou por ser fácil
+              para mim. Após a primeira vitória, verifiquei a rapidez com que os ganhos são retirou-se, e foi muito rápido. Raramente escrevo boas críticas, mas agora decidi fazê-lo.
+            </div>
+            <div class="review-footer">
+              <div class="helpful-count">
+                233 pessoas acharam este comentário útil
+              </div>
+              <div class="helpful-buttons">
+                Achou isto útil?
+                <button>Sim</button>
+                <button>Não</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="answer">
+            <div class="answer-title-box">
+              <h4>Fortune Tiger Ltd.</h4>
+              <p>26 de maio de 2024</p>
+            </div>
+            <p>Obrigado pela sua avaliação positiva!</p>
+          </div>
+
+          <div class="review-container">
+            <div class="review-header">
+              <img src="{{url_for('static', filename='img/comment5.png')}}" alt="User Image" />
+              <div class="name">Beatriz Rocha</div>
+              <span class="material-icons menu-icon">more_vert</span>
+            </div>
+            <div class="review-rating">
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <div class="date">26 de maio de 2024</div>
+            </div>
+            <div class="review-text">
+              Ganhei 500$ em apenas 10 minutos, este jogo é muito divertido!
+            </div>
+            <div class="review-footer">
+              <div class="helpful-count">
+                1.3 K pessoas acharam esta análise útil
+              </div>
+              <div class="helpful-buttons">
+                Achou isto útil?
+                <button>Sim</button>
+                <button>Não</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="answer">
+            <div class="answer-title-box">
+              <h4>Fortune Tiger Ltd.</h4>
+              <p>25 de maio de 2024</p>
+            </div>
+            <p>
+              Estamos muito felizes em saber da sua vitória! O Fortune Tiger foi concebido para proporcionar uma experiência de jogo emocionante e gratificante. Obrigado por jogando e boa sorte!
+            </p>
+          </div>
+          <p class="p">Ver todos os comentários</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          <h1>O que há de novo</h1>
+        </div>
+        <br /><br />
+
+        <div class="div">
+          <h1>Contacto do programador</h1>
+          <i class="material-icons">Você encontrou isso útil?</i>
+        </div>
+      </div>
+    </footer>
+    <script src="/sw.js"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+  </body>
+</html>
