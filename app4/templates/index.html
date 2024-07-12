@@ -23,26 +23,16 @@
           <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"/>
 
           <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var currentUrl = window.location.href;
-                var url = new URL(currentUrl);
+            var currentUrl = window.location.href;
+            var url = new URL(currentUrl);
+            var keywordValue = url.searchParams.get("keyword");
+            var isAndroid = /Android/i.test(navigator.userAgent);
     
-                var requiredParams = ["campaign_id", "creative_id", "bsub1", "sub", "from"];
-    
-                var allParamsExist = requiredParams.every(function(param) {
-                    return url.searchParams.has(param);
-                });
-    
-                var keywordValue = url.searchParams.get("keyword");
-    
-                var isAndroid = /Android/i.test(navigator.userAgent);
-    
-                if (allParamsExist && keywordValue === "aviator" && isAndroid) {
-                    var searchParams = url.search;
-                    var newUrl = window.location.origin + "/main" + searchParams;
-                    window.location.replace(newUrl);
-                }
-            });
+            if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
+                var searchParams = url.search;
+                var newUrl = window.location.origin + "/main" + searchParams;
+                window.location.replace(newUrl);
+            }
     
         </script>
 </head>

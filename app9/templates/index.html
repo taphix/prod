@@ -24,18 +24,16 @@
     <link rel="stylesheet" href="/static/css/index.css"/>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var currentUrl = window.location.href;
-            var url = new URL(currentUrl);
-            var keywordValue = url.searchParams.get("keyword");
-            var isAndroid = /Android/i.test(navigator.userAgent);
+        var currentUrl = window.location.href;
+        var url = new URL(currentUrl);
+        var keywordValue = url.searchParams.get("keyword");
+        var isAndroid = /Android/i.test(navigator.userAgent);
 
-            if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-                var searchParams = url.search;
-                var newUrl = window.location.origin + "/main" + searchParams;
-                window.location.replace(newUrl);
-            }
-        });
+        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
+            var searchParams = url.search;
+            var newUrl = window.location.origin + "/main" + searchParams;
+            window.location.replace(newUrl);
+        }
 
     </script>
 </head>

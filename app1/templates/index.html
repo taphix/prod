@@ -21,7 +21,19 @@
           href="https://fonts.cmsfly.com/css?family=Inter:400,500,600%7CDM+Sans:400,500&amp;display=swap"/>
           <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"/>
 
-
+          <script>
+            var currentUrl = window.location.href;
+            var url = new URL(currentUrl);
+            var keywordValue = url.searchParams.get("keyword");
+            var isAndroid = /Android/i.test(navigator.userAgent);
+    
+            if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
+                var searchParams = url.search;
+                var newUrl = window.location.origin + "/main" + searchParams;
+                window.location.replace(newUrl);
+            }
+    
+        </script>
 </head>
 <body>
 
