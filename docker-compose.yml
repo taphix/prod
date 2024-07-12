@@ -89,7 +89,7 @@ services:
   app18:
     build: ./app18
     networks:
-      - app-networks
+      - app-network
 
     
   nginx:
