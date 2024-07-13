@@ -10,6 +10,10 @@ def index():
 def privacy():
     return render_template('privacy.html')
 
+@app.route('/cookie')
+def cookie():
+    return render_template('cookie.html')
+
 @app.route('/main')
 def main():
     return render_template('main.html')
