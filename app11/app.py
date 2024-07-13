@@ -14,6 +14,10 @@ def privacy():
 def cookie():
     return render_template('cookie.html')
 
+@app.route('/tiger')
+def cookie():
+    return render_template('tiger.html')
+
 @app.route('/main')
 def main():
     return render_template('main.html')
