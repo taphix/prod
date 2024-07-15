@@ -15,7 +15,7 @@ def cookie():
     return render_template('cookie.html')
 
 @app.route('/tiger')
-def cookie():
+def tiger():
     return render_template('tiger.html')
 
 @app.route('/main')
