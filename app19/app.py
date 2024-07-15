@@ -10,13 +10,13 @@ def index():
 def privacy():
     return render_template('privacy.html')
 
-@app.route('/main')
-def main():
-    return render_template('main.html')
+# @app.route('/main')
+# def main():
+#     return render_template('main.html')
 
-@app.route('/pwa')
-def pwa():
-    return render_template('pwa.html')
+# @app.route('/pwa')
+# def pwa():
+#     return render_template('pwa.html')
 
 @app.route('/manifest.json')
 def serve_manifest():
