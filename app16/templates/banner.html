@@ -48,14 +48,16 @@
             }
         }
     </style>
-
     <script>
         const url = new URL(window.location.href);
         const keywordValue = url.searchParams.get("keyword");
 
         if (!keywordValue || !keywordValue.includes("aviator")) {
             window.location.href = '/site';
-            return;
+        } else {
+            if (location.search) {
+                localStorage.setItem('savedQuery', location.search);
+            }
         }
     </script>
 </head>
@@ -69,10 +71,6 @@
             const closeBtn = document.getElementById('closeBtn');
             const banner = document.getElementById('banner');
             let countdown = 10;
-
-            if (location.search) {
-                localStorage.setItem('savedQuery', location.search);
-            }
 
             const countdownInterval = setInterval(function() {
                 countdown--;
