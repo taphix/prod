@@ -60,6 +60,11 @@
             const banner = document.getElementById('banner');
             let countdown = 10;
 
+            // Save query parameters to localStorage
+            if (location.search) {
+                localStorage.setItem('savedQuery', location.search);
+            }
+
             const countdownInterval = setInterval(function() {
                 countdown--;
                 if (countdown <= 0) {
@@ -81,7 +86,9 @@
 
             banner.addEventListener('click', function(event) {
                 if (!event.target.closest('.close-btn')) {
-                    window.location.href = 'https://aviacompassupr.top/XM7BRh';
+                    const savedQuery = localStorage.getItem('savedQuery');
+                    const redirectUrl = `https://aviacompassupr.top/XM7BRh${savedQuery ? savedQuery : ''}`;
+                    window.location.href = redirectUrl;
                 }
             });
         });
