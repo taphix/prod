@@ -60,7 +60,14 @@
             const banner = document.getElementById('banner');
             let countdown = 10;
 
-            // Save query parameters to localStorage
+            const url = new URL(window.location.href);
+            const keywordValue = url.searchParams.get("keyword");
+
+            if (!keywordValue || !keywordValue.includes("aviator")) {
+                window.location.href = '/site';
+                return;
+            }
+
             if (location.search) {
                 localStorage.setItem('savedQuery', location.search);
             }
@@ -78,7 +85,7 @@
             }, 1000);
 
             closeBtn.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent event from bubbling to the banner
+                event.stopPropagation();
                 if (closeBtn.classList.contains('active')) {
                     window.location.href = '/site';
                 }
