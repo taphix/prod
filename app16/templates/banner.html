@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            background: #242424;
+            background: #000000;
             height: 100%;
             overflow: hidden;
         }
@@ -32,13 +32,12 @@
             font-size: 50px;
             font-weight: bolder;
             color: #fff;
-            cursor: not-allowed;
             transition: color 0.3s;
             z-index: 1; /* Ensure close button is above the banner */
         }
 
         .close-btn.active {
-            color: white;
+            color: #242424;
             cursor: pointer;
         }
 
@@ -52,18 +51,26 @@
 </head>
 <body>
     <div class="banner" id="banner">
-        <div class="close-btn" id="closeBtn">&times;</div>
+        <div class="close-btn" id="closeBtn">10</div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const closeBtn = document.getElementById('closeBtn');
             const banner = document.getElementById('banner');
+            let countdown = 10;
 
-            setTimeout(function() {
-                closeBtn.classList.add('active');
-                closeBtn.style.cursor = 'pointer';
-            }, 10000);
+            const countdownInterval = setInterval(function() {
+                countdown--;
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    closeBtn.textContent = '×';
+                    closeBtn.classList.add('active');
+                    closeBtn.style.cursor = 'pointer';
+                } else {
+                    closeBtn.textContent = countdown;
+                }
+            }, 1000);
 
             closeBtn.addEventListener('click', function(event) {
                 event.stopPropagation(); // Prevent event from bubbling to the banner
