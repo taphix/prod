@@ -90,6 +90,11 @@ services:
     build: ./app18
     networks:
       - app-network
+
+  app19:
+    build: ./app19
+    networks:
+      - app-network
     
   nginx:
     image: nginx:latest
