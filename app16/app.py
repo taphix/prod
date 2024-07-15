@@ -3,7 +3,7 @@ from flask import Flask, render_template, send_from_directory, request
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def banner():
     return render_template('banner.html')
 
 @app.route('/site')
