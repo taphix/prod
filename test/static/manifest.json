@@ -1,0 +1,17 @@
+{
+    "name": "Aviator India",
+    "short_name": "Aviator India",
+    "start_url": "/pwa",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#317EFB",
+    "background_color": "#317EFB",
+    "icons": [
+      {
+        "src": "/static/img/logo.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }
