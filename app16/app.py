@@ -4,19 +4,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    return render_template('banner.html')
+
+@app.route('/site')
+def index():
     return render_template('index.html')
 
 @app.route('/privacy')
 def privacy():
     return render_template('privacy.html')
 
-@app.route('/main')
-def main():
-    return render_template('main.html')
+# @app.route('/main')
+# def main():
+#     return render_template('main.html')
 
-@app.route('/pwa')
-def pwa():
-    return render_template('pwa.html')
+# @app.route('/pwa')
+# def pwa():
+#     return render_template('pwa.html')
 
 @app.route('/manifest.json')
 def serve_manifest():
