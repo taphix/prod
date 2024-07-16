@@ -1,6 +1,11 @@
 from flask import Flask, render_template, send_from_directory, request
 
+from tiger.tiger import tiger
+
 app = Flask(__name__)
+
+app.register_blueprint(tiger, url_prefix='/tiger')
+
 
 @app.route('/')
 def index():
@@ -14,17 +19,14 @@ def privacy():
 def cookie():
     return render_template('cookie.html')
 
-@app.route('/tiger')
-def tiger():
-    return render_template('tiger.html')
 
-@app.route('/main')
-def main():
-    return render_template('main.html')
+# @app.route('/main')
+# def main():
+#     return render_template('main.html')
 
-@app.route('/pwa')
-def pwa():
-    return render_template('pwa.html')
+# @app.route('/pwa')
+# def pwa():
+#     return render_template('pwa.html')
 
 @app.route('/manifest.json')
 def serve_manifest():
