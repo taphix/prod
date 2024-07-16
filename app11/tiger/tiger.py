@@ -4,12 +4,12 @@ tiger = Blueprint('tiger', __name__, template_folder='templates', static_folder=
 
 @tiger.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('tiger/index.html')
 
 @tiger.route('/privacy')
 def privacy():
-    return render_template('privacy.html')
+    return render_template('tiger/privacy.html')
 
 @tiger.route('/cookie')
 def cookie():
-    return render_template('cookie.html')
+    return render_template('tiger/cookie.html')

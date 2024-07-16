@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 app.register_blueprint(tiger, url_prefix='/tiger')
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
