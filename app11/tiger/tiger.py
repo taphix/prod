@@ -13,3 +13,15 @@ def privacy():
 @tiger.route('/cookie')
 def cookie():
     return render_template('tiger/cookie.html')
+
+@tiger.route('/data')
+def data():
+    return render_template('tiger/data.html')
+
+@tiger.route('/dmca')
+def dmca():
+    return render_template('tiger/dmca.html')
+
+@tiger.route('/terms')
+def terms():
+    return render_template('tiger/terms.html')
