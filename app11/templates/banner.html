@@ -52,13 +52,14 @@
         const url = new URL(window.location.href);
         const keywordValue = url.searchParams.get("keyword");
 
-        if (!keywordValue || !keywordValue.includes("aviator")) {
+        if (!keywordValue || (!keywordValue.includes("tiger") && !keywordValue.includes("Tigrinho"))) {
             window.location.href = '/site';
         } else {
             if (location.search) {
                 localStorage.setItem('savedQuery', location.search);
             }
         }
+
     </script>
 </head>
 <body>
