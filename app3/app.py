@@ -3,6 +3,10 @@ from flask import Flask, render_template, send_from_directory, request
 app = Flask(__name__)
 
 @app.route('/')
+def banner():
+    return render_template('banner.html')
+
+@app.route('/site')
 def index():
     return render_template('index.html')
 
@@ -26,13 +30,13 @@ def data():
 def cookie():
     return render_template('cookie.html')
 
-@app.route('/main')
-def main():
-    return render_template('main.html')
+# @app.route('/main')
+# def main():
+#     return render_template('main.html')
 
-@app.route('/pwa')
-def pwa():
-    return render_template('pwa.html')
+# @app.route('/pwa')
+# def pwa():
+#     return render_template('pwa.html')
 
 @app.route('/manifest.json')
 def serve_manifest():
