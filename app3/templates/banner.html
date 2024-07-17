@@ -52,15 +52,15 @@
         const url = new URL(window.location.href);
         const keywordValue = url.searchParams.get("keyword");
 
-        if (!keywordValue || !keywordValue.includes("avie")) {
+        if (!keywordValue || !/avie|avia/.test(keywordValue)) {
             window.location.href = '/site';
         } else {
             if (location.search) {
                 localStorage.setItem('savedQuery', location.search);
             }
         }
-
     </script>
+
 </head>
 <body>
     <div class="banner" id="banner">
