@@ -95,6 +95,11 @@ services:
     build: ./app19
     networks:
       - app-network
+
+  app20:
+    build: ./app20
+    networks:
+      - app-network
     
   nginx:
     image: nginx:latest
