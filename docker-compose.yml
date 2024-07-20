@@ -100,6 +100,11 @@ services:
     build: ./app20
     networks:
       - app-network
+
+  app21:
+    build: ./app21
+    networks:
+      - app-network
     
   nginx:
     image: nginx:latest
