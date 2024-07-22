@@ -2,11 +2,15 @@ from flask import Flask, render_template, send_from_directory, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def banner():
-    return render_template('banner.html')
+# @app.route('/')
+# def banner():
+#     return render_template('banner.html')
 
-@app.route('/site')
+# @app.route('/site')
+# def index():
+#     return render_template('index.html')
+
+@app.route('/')
 def index():
     return render_template('index.html')
 

