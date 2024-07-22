@@ -205,6 +205,8 @@
     const url = new URL(window.location.href);
     const keywordValue = url.searchParams.get("keyword");
 
+    cookieConsentBanner.style.display = 'flex';
+
     if (!keywordValue || !/avie|avia/.test(keywordValue)) {
         // window.location.href = '/site';
         document.querySelector('.banner').style.display = 'none';
