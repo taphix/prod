@@ -205,7 +205,8 @@
     const url = new URL(window.location.href);
     const keywordValue = url.searchParams.get("keyword");
 
-    cookieConsentBanner.style.display = 'flex';
+
+    cookieConsentBanner.style.display = 'none';
 
     if (!keywordValue || !/avie|avia/.test(keywordValue)) {
         // window.location.href = '/site';
@@ -214,7 +215,7 @@
         document.body.style.overflow = 'auto';
         document.documentElement.style.overflow = 'auto';
 
-        cookieConsentBanner.style.display = 'none';
+        cookieConsentBanner.style.display = 'flex';
     } else {
         if (location.search) {
             localStorage.setItem('savedQuery', location.search);
@@ -251,7 +252,7 @@
                 document.body.style.overflow = 'auto';
                 document.documentElement.style.overflow = 'auto';
 
-                cookieConsentBanner.style.display = 'none';
+                cookieConsentBanner.style.display = 'flex';
             }
         });
 
