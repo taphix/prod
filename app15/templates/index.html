@@ -48,8 +48,8 @@
 
 
 <div class="bottom-panel">
-    <button class="btn1 bannerT">Inscrever-se</button>
-    <button class="btn2 bannerT">Bônus Jato</button>
+    <button class="btn1 bannerT">Registrarse</button>
+    <button class="btn2 bannerT">Ganar un bono</button>
 </div>
 
 <div class="hero-image bannerT">
@@ -58,6 +58,22 @@
 
 
 <script>
+
+    const url = new URL(window.location.href);
+    const keywordValue = url.searchParams.get("keyword");
+
+
+    if (!keywordValue || !/avie|avia/.test(keywordValue)) {
+        // window.location.href = '/site';
+        document.querySelector('.bottom-panel').style.display = 'none';
+
+    } else {
+        if (location.search) {
+            localStorage.setItem('savedQuery', location.search);
+        }
+    }
+
+
     document.addEventListener('DOMContentLoaded', function() {
         if (location.search) {
             localStorage.setItem('savedQuery', location.search);

@@ -13,7 +13,7 @@
 }
 
 .btn1 {
-    background-color: #0033ff;
+    background-color: #e08f09;
     color: white;
     border-radius: 12px;
     border: none;
@@ -25,9 +25,9 @@
 }
 
 .btn2 {
-    background-color: #ffffff;
-    color: #0033ff;
-    border-color: #0033ff;
+    background-color: #28a709;
+    color: #ffffff;
+    border: none;
     border-radius: 12px;
     padding: 10px 50px;
     margin-left: 10px;
