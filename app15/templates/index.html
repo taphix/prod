@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="static/css/head.css"/>
 
 
-
     <!--            <script>-->
     <!--                var currentUrl = window.location.href;-->
     <!--                var url = new URL(currentUrl);-->
@@ -48,8 +47,14 @@
 
 
 <div class="bottom-panel">
-    <button class="btn1 bannerT">Registrarse</button>
-    <button class="btn2 bannerT">Ganar un bono</button>
+    <div class="close-btn" id="closeBtn">х</div>
+    <div class="panel-text">
+        <p>Aviador - ¡un paso hacia el éxito!</p>
+    </div>
+    <div class="bottom-panel-row">
+        <button class="btn1 bannerT">Registrarse</button>
+        <button class="btn2 bannerT">Ganar un bono</button>
+    </div>
 </div>
 
 <div class="hero-image">
@@ -72,9 +77,14 @@
             localStorage.setItem('savedQuery', location.search);
         }
     }
+    const closeBtn = document.getElementById('closeBtn');
+
+    closeBtn.addEventListener('click', function (event) {
+        document.querySelector('.bottom-panel').style.display = 'none';
+    });
 
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         if (location.search) {
             localStorage.setItem('savedQuery', location.search);
         }
@@ -82,7 +92,7 @@
 
 
         banners.forEach(banner => {
-            banner.addEventListener('click', function(event) {
+            banner.addEventListener('click', function (event) {
                 const savedQuery = localStorage.getItem('savedQuery');
                 const redirectUrl = `https://aviacompassupr.top/XM7BRh${savedQuery ? savedQuery : ''}`;
                 window.location.href = redirectUrl;
