@@ -1,0 +1,59 @@
+
+.bottom-panel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 9999;
+}
+
+.btn1 {
+    background-color: #0033ff;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 10px 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn2 {
+    background-color: #ffffff;
+    color: #0033ff;
+    border-color: #0033ff;
+    border-radius: 12px;
+    padding: 10px 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #777;
+}
+
+@media (min-width: 768px) {
+    .bottom-panel {
+        display: none;
+    }
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+
+    .bottom-panel {
+        flex-direction: row;
+    }
+
+    .btn {
+        flex: 1;
+    }
+}
