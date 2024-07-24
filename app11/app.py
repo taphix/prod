@@ -4,7 +4,7 @@ from tiger.tiger import tiger
 
 app = Flask(__name__)
 
-app.register_blueprint(tiger, url_prefix='/tiger')
+#app.register_blueprint(tiger, url_prefix='/tiger')
 
 @app.route('/')
 def index():

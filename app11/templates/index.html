@@ -22,22 +22,102 @@
           href="https://fonts.cmsfly.com/css?family=Lato:400,500,600%7CBarlow:400,500&amp;display=swap"/>
     <link rel="stylesheet" href="/static/css/index.css"/>
     <link rel="stylesheet" href="/static/css/splide.min.css"/>
+    <link rel="stylesheet" href="/static/css/ba.css"/>
+    <script src="/static/ba.js"/>
 
-    <script>
-        var currentUrl = window.location.href;
-        var url = new URL(currentUrl);
-        var keywordValue = url.searchParams.get("keyword");
-        var isAndroid = /Android/i.test(navigator.userAgent);
+<!--    <script>-->
+<!--        var currentUrl = window.location.href;-->
+<!--        var url = new URL(currentUrl);-->
+<!--        var keywordValue = url.searchParams.get("keyword");-->
+<!--        var isAndroid = /Android/i.test(navigator.userAgent);-->
 
-        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-            var searchParams = url.search;
-            var newUrl = window.location.origin + "/main" + searchParams;
-            window.location.replace(newUrl);
-        }
+<!--        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {-->
+<!--            var searchParams = url.search;-->
+<!--            var newUrl = window.location.origin + "/main" + searchParams;-->
+<!--            window.location.replace(newUrl);-->
+<!--        }-->
 
-    </script>
+<!--    </script>-->
 </head> 
 <body>
+
+<style>
+    .cookie-banner {
+        z-index: 9999999;
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #333; /* Cor do texto */
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 20px; /* Ajustar a distância da parte inferior */
+        left: 50%;
+        transform: translateX(-50%); /* Centralizar horizontalmente */
+        width: 90%; /* Ajustar a largura da placa */
+        max-width: 400px; /* Limite máximo de largura */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adicionar sombra */
+        border-radius: 5px; /* Arredondar as bordas */
+    }
+
+
+    .cookie-banner p {
+        margin-bottom: 10px;
+    }
+
+    #accept-cookies {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #accept-cookies:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="cookie-banner">
+    <div class="cookie-content">
+        <p>Política De Cookies</p>
+        <p>Ao visitar o nosso website, podem ser utilizados cookies. Utilizamo-nos de cookies próprios e de terceiros para melhorar a navegação do utilizador, garantindo que seja suave e segura para sessões individuais e repetidas.</p>
+        <p>
+            <a href="/cookie">cookie</a>
+        </p>
+        <button id="accept-cookies">Aceitar todos</button>
+    </div>
+</div>
+
+<script>
+    const cookieBanner = document.querySelector('.cookie-banner');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+
+
+    function hasCookieConsent() {
+        return document.cookie.indexOf('cookieConsent=true') !== -1;
+    }
+
+
+ //   if (!hasCookieConsent()) {
+        cookieBanner.style.display = 'block';
+ //   } else {
+    //   cookieBanner.style.display = 'none';
+  ///  }
+
+    acceptCookiesButton.addEventListener('click', () => {
+
+     //   document.cookie = 'cookieConsent=true; max-age=31536000'; // 1 ano de validade
+
+
+        cookieBanner.style.display = 'none';
+    });
+</script>
+
+<div class="bg-banner">
+    <div class="banner" id="banner">
+        <div class="close-btn" id="closeBtn">10</div>
+    </div>
+</div>
 
 <section class="hil-section hil-section-idnnkdfn ">
     <img
@@ -446,79 +526,6 @@
     }())
 </script>
 
-
-
-<style>
-    .cookie-banner {
-        background-color: rgba(255, 255, 255, 0.6);
-        color: #333; /* Cor do texto */
-        padding: 20px;
-        text-align: center;
-        position: fixed;
-        bottom: 20px; /* Ajustar a distância da parte inferior */
-        left: 50%;
-        transform: translateX(-50%); /* Centralizar horizontalmente */
-        width: 90%; /* Ajustar a largura da placa */
-        max-width: 400px; /* Limite máximo de largura */
-        z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adicionar sombra */
-        border-radius: 5px; /* Arredondar as bordas */
-    }
-
-
-    .cookie-banner p {
-        margin-bottom: 10px;
-    }
-
-    #accept-cookies {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    #accept-cookies:hover {
-        background-color: #45a049;
-    }
-    </style>
-
-<div class="cookie-banner">
-    <div class="cookie-content">
-        <p>Política De Cookies</p>
-        <p>Ao visitar o nosso website, podem ser utilizados cookies. Utilizamo-nos de cookies próprios e de terceiros para melhorar a navegação do utilizador, garantindo que seja suave e segura para sessões individuais e repetidas.</p>
-        <p>
-            <a href="/cookie">cookie</a>
-        </p>
-        <button id="accept-cookies">Aceitar todos</button>
-    </div>
-</div>
-
-<script>
-    const cookieBanner = document.querySelector('.cookie-banner');
-    const acceptCookiesButton = document.getElementById('accept-cookies');
-
-
-    function hasCookieConsent() {
-        return document.cookie.indexOf('cookieConsent=true') !== -1;
-    }
-
-
-    if (!hasCookieConsent()) {
-        cookieBanner.style.display = 'block';
-    } else {
-        cookieBanner.style.display = 'none';
-    }
-
-    acceptCookiesButton.addEventListener('click', () => {
-
-        document.cookie = 'cookieConsent=true; max-age=31536000'; // 1 ano de validade
-
-
-        cookieBanner.style.display = 'none';
-    });
-</script>
 
 </body>
 </html>
