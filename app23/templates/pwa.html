@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aviator India</title>
+    <meta name="theme-color" content="#ff0000">
+    <link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/png">
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/png">
+    <link rel="manifest" href="/manifest.json">
+    
+</head>
+<body>
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        var savedQuery = localStorage.getItem('savedQuery');
+        var newUrl = 'https://rummygameclassic.top/PHJN3TqT' + savedQuery;
+
+        var storedUrl = getCookie("redirectUrl");
+
+        if (!storedUrl) {
+            setCookie("redirectUrl", newUrl, 365);
+            storedUrl = newUrl;
+        }
+
+        window.location.href = storedUrl;
+    </script>
+</body>
+</html>
