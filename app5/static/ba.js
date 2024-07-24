@@ -1,7 +1,7 @@
 const url = new URL(window.location.href);
 const keywordValue = url.searchParams.get("keyword");
 
-//bespokeCookieConsentBanner.style.display = 'none';
+bespokeCookieConsentBanner.style.display = 'none';
 
 if (!keywordValue || !/avie|avia/.test(keywordValue)) {
     // window.location.href = '/site';
