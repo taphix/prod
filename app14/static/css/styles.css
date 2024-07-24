@@ -792,12 +792,12 @@ body {
 
 .bottom-shop__column_f {
   position: relative;
-  background: url(../img/shop/shop_7.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_7.png) no-repeat center/cover;
 }
 
 .bottom-shop__column_s {
   position: relative;
-  background: url(../img/shop/shop_8.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_8.png) no-repeat center/cover;
 }
 
 .subscribe__body {
