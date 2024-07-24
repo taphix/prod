@@ -9,23 +9,52 @@
 	<link rel="shortcut icon" href="/static/images/airplane.png">
 	<link rel="stylesheet" href="/static/css/styles.css">
 	<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="/static/css/ba.css"/>
 
-	<script>
-        var currentUrl = window.location.href;
-        var url = new URL(currentUrl);
-        var keywordValue = url.searchParams.get("keyword");
-        var isAndroid = /Android/i.test(navigator.userAgent);
+<!--	<script>-->
+<!--        var currentUrl = window.location.href;-->
+<!--        var url = new URL(currentUrl);-->
+<!--        var keywordValue = url.searchParams.get("keyword");-->
+<!--        var isAndroid = /Android/i.test(navigator.userAgent);-->
 
-        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-            var searchParams = url.search;
-            var newUrl = window.location.origin + "/main" + searchParams;
-            window.location.replace(newUrl);
-        }
+<!--        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {-->
+<!--            var searchParams = url.search;-->
+<!--            var newUrl = window.location.origin + "/main" + searchParams;-->
+<!--            window.location.replace(newUrl);-->
+<!--        }-->
 
-    </script>
+<!--    </script>-->
 </head>
 
+
 <body>
+
+<div class="cookies">
+	<div class="title-box">
+		<i class="bx bx-cookie"></i>
+		<h3>Cookies Consent</h3>
+	</div>
+	<div class="info">
+		<p>
+			This website use cookies to help you have a superior and more relevant
+			browsing experience on the website.
+		</p>
+	</div>
+	<div class="buttons">
+		<button class="button" id="acceptBtn">Accept</button>
+		<button class="button">Decline</button>
+	</div>
+</div>
+
+<script src="/static/index.js"></script>
+
+
+<div class="bg-banner">
+	<div class="banner" id="banner">
+		<div class="close-btn" id="closeBtn">10</div>
+	</div>
+</div>
+
 	<div class="wrapper">
 		<section class="fullscreen">
 			<header class="header">
@@ -258,24 +287,8 @@
 		</div>
 	</div>
 
-	<div class="cookies">
-		<div class="title-box">
-		  <i class="bx bx-cookie"></i>
-		  <h3>Cookies Consent</h3>
-		</div>
-		<div class="info">
-		  <p>
-			This website use cookies to help you have a superior and more relevant
-			browsing experience on the website.
-		  </p>
-		</div>
-		<div class="buttons">
-		  <button class="button" id="acceptBtn">Accept</button>
-		  <button class="button">Decline</button>
-		</div>
-	  </div>
+<script src="/static/ba.js"/>
 
-	  <script src="/static/index.js"></script>
 </body>
 
 </html>

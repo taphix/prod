@@ -1026,6 +1026,7 @@ body {
 
 
 .cookies {
+  z-index: 9999999;
   position: fixed;
   right: -370px;
   bottom: 50px;
