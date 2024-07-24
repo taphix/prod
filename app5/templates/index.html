@@ -25,21 +25,163 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lc-lightbox-lite@1.2.13/skins/light.css"/>
     <link rel="stylesheet" href="{{url_for('static', filename='css/splide.min.css')}}"/>
 
-    <script>
-        var currentUrl = window.location.href;
-        var url = new URL(currentUrl);
-        var keywordValue = url.searchParams.get("keyword");
-        var isAndroid = /Android/i.test(navigator.userAgent);
+    <link rel="stylesheet" href="/static/css/ba.css"/>
 
-        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-            var searchParams = url.search;
-            var newUrl = window.location.origin + "/main" + searchParams;
-            window.location.replace(newUrl);
-        }
+<!--    <script>-->
+<!--        var currentUrl = window.location.href;-->
+<!--        var url = new URL(currentUrl);-->
+<!--        var keywordValue = url.searchParams.get("keyword");-->
+<!--        var isAndroid = /Android/i.test(navigator.userAgent);-->
 
-    </script>
+<!--        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {-->
+<!--            var searchParams = url.search;-->
+<!--            var newUrl = window.location.origin + "/main" + searchParams;-->
+<!--            window.location.replace(newUrl);-->
+<!--        }-->
+
+<!--    </script>-->
 </head>
 <body>
+
+
+<style>
+    .bespoke-cookie-consent-banner {
+        position: fixed;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92%;
+        max-width: 850px;
+        background-color: #f9f9f9;
+        color: #333333;
+        padding: 2.2rem;
+        box-sizing: border-box;
+        border-radius: 1.4rem;
+        box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.22);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(100%) translateX(-50%);
+        animation: bespoke-fade-in-up 0.7s ease-out forwards;
+    }
+
+    .bespoke-cookie-consent-banner__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bespoke-cookie-consent-banner__icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .bespoke-cookie-consent-banner__title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .bespoke-cookie-consent-banner__description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+    }
+
+    .bespoke-cookie-consent-banner__link {
+        color: #2980b9;
+        text-decoration: underline;
+    }
+
+    .bespoke-cookie-consent-banner__actions {
+        display: flex;
+        justify-content: center;
+        gap: 1.4rem;
+    }
+
+    .bespoke-cookie-consent-banner__button {
+        background-color: #2980b9;
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.7rem;
+        cursor: pointer;
+        font-size: 1.05rem;
+        font-weight: 500;
+        transition: background-color 0.5s ease;
+    }
+
+    .bespoke-cookie-consent-banner__button--outline {
+        background-color: transparent;
+        color: #2980b9;
+        border: 1px solid #2980b9;
+    }
+
+    .bespoke-cookie-consent-banner__button:hover {
+        background-color: #2471a3;
+    }
+
+    .bespoke-cookie-consent-banner__button--outline:hover {
+        background-color: rgba(41, 128, 185, 0.12);
+    }
+
+    @keyframes bespoke-fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(100%) translateX(-50%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(-2.5rem) translateX(-50%);
+        }
+    }
+</style>
+<div id="bespoke-cookie-consent-banner" class="bespoke-cookie-consent-banner">
+    <div class="bespoke-cookie-consent-banner__content">
+        <div class="bespoke-cookie-consent-banner__text">
+            <p class="bespoke-cookie-consent-banner__description">Our site uses cookies to improve performance and analyze traffic. You can manage cookies through your browser settings. For more information, please contact us: rotenklara@gmail.com</p>
+        </div>
+        <div class="bespoke-cookie-consent-banner__actions">
+            <button id="bespoke-cookie-consent-decline" class="bespoke-cookie-consent-banner__button bespoke-cookie-consent-banner__button--outline">Decline</button>
+            <button id="bespoke-cookie-consent-accept" class="bespoke-cookie-consent-banner__button">Accept</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const isBespokeCookieAccepted = localStorage.getItem('bespoke-cookie-consent-accepted');
+    const bespokeCookieConsentBanner = document.getElementById('bespoke-cookie-consent-banner');
+    bespokeCookieConsentBanner.style.display = 'flex';
+    if (!isBespokeCookieAccepted) {
+
+        bespokeCookieConsentBanner.style.display = 'flex';
+
+        const bespokeCookieConsentAcceptButton = document.getElementById('bespoke-cookie-consent-accept');
+        bespokeCookieConsentAcceptButton.addEventListener('click', () => {
+           // localStorage.setItem('bespoke-cookie-consent-accepted', 'true');
+            bespokeCookieConsentBanner.style.display = 'none';
+        });
+
+        const bespokeCookieConsentDeclineButton = document.getElementById('bespoke-cookie-consent-decline');
+        bespokeCookieConsentDeclineButton.addEventListener('click', () => {
+            bespokeCookieConsentBanner.style.display = 'none';
+        });
+    }
+    else{
+        bespokeCookieConsentBanner.style.display = 'none';
+    }
+</script>
+
+<div class="bg-banner">
+    <div class="banner" id="banner">
+        <div class="close-btn" id="closeBtn">10</div>
+    </div>
+</div>
+
+<script src="/static/ba.js"></script>
 
 <section class="murat-section murat-section-pfn6s5nc ">
     <div class="murat-container-e881ehpz  ">
@@ -666,134 +808,5 @@
     }())
 </script>
 
-<style>
-    .bespoke-cookie-consent-banner {
-        position: fixed;
-        bottom: 2.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 92%;
-        max-width: 850px;
-        background-color: #f9f9f9;
-        color: #333333;
-        padding: 2.2rem;
-        box-sizing: border-box;
-        border-radius: 1.4rem;
-        box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.22);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(100%) translateX(-50%);
-        animation: bespoke-fade-in-up 0.7s ease-out forwards;
-    }
-
-    .bespoke-cookie-consent-banner__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .bespoke-cookie-consent-banner__icon {
-        width: 3.8rem;
-        height: 3.8rem;
-        margin-bottom: 1.4rem;
-    }
-
-    .bespoke-cookie-consent-banner__title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-
-    .bespoke-cookie-consent-banner__description {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        margin-bottom: 2rem;
-    }
-
-    .bespoke-cookie-consent-banner__link {
-        color: #2980b9;
-        text-decoration: underline;
-    }
-
-    .bespoke-cookie-consent-banner__actions {
-        display: flex;
-        justify-content: center;
-        gap: 1.4rem;
-    }
-
-    .bespoke-cookie-consent-banner__button {
-        background-color: #2980b9;
-        color: #fff;
-        border: none;
-        padding: 1rem 2rem;
-        border-radius: 0.7rem;
-        cursor: pointer;
-        font-size: 1.05rem;
-        font-weight: 500;
-        transition: background-color 0.5s ease;
-    }
-
-    .bespoke-cookie-consent-banner__button--outline {
-        background-color: transparent;
-        color: #2980b9;
-        border: 1px solid #2980b9;
-    }
-
-    .bespoke-cookie-consent-banner__button:hover {
-        background-color: #2471a3;
-    }
-
-    .bespoke-cookie-consent-banner__button--outline:hover {
-        background-color: rgba(41, 128, 185, 0.12);
-    }
-
-    @keyframes bespoke-fade-in-up {
-        0% {
-            opacity: 0;
-            transform: translateY(100%) translateX(-50%);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(-2.5rem) translateX(-50%);
-        }
-    }
-</style>
-<div id="bespoke-cookie-consent-banner" class="bespoke-cookie-consent-banner">
-    <div class="bespoke-cookie-consent-banner__content">
-        <div class="bespoke-cookie-consent-banner__text">
-            <p class="bespoke-cookie-consent-banner__description">Our site uses cookies to improve performance and analyze traffic. You can manage cookies through your browser settings. For more information, please contact us: rotenklara@gmail.com</p>
-        </div>
-        <div class="bespoke-cookie-consent-banner__actions">
-            <button id="bespoke-cookie-consent-decline" class="bespoke-cookie-consent-banner__button bespoke-cookie-consent-banner__button--outline">Decline</button>
-            <button id="bespoke-cookie-consent-accept" class="bespoke-cookie-consent-banner__button">Accept</button>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    const isBespokeCookieAccepted = localStorage.getItem('bespoke-cookie-consent-accepted');
-    const bespokeCookieConsentBanner = document.getElementById('bespoke-cookie-consent-banner');
-    if (!isBespokeCookieAccepted) {
-
-        bespokeCookieConsentBanner.style.display = 'flex';
-
-        const bespokeCookieConsentAcceptButton = document.getElementById('bespoke-cookie-consent-accept');
-        bespokeCookieConsentAcceptButton.addEventListener('click', () => {
-            localStorage.setItem('bespoke-cookie-consent-accepted', 'true');
-            bespokeCookieConsentBanner.style.display = 'none';
-        });
-
-        const bespokeCookieConsentDeclineButton = document.getElementById('bespoke-cookie-consent-decline');
-        bespokeCookieConsentDeclineButton.addEventListener('click', () => {
-            bespokeCookieConsentBanner.style.display = 'none';
-        });
-    }
-    else{
-        bespokeCookieConsentBanner.style.display = 'none';
-    }
-</script>
 </body>
 </html>
