@@ -155,9 +155,9 @@
     const isBespokeCookieAccepted = localStorage.getItem('bespoke-cookie-consent-accepted');
     const bespokeCookieConsentBanner = document.getElementById('bespoke-cookie-consent-banner');
     bespokeCookieConsentBanner.style.display = 'flex';
-    if (!isBespokeCookieAccepted) {
+    //if (!isBespokeCookieAccepted) {
 
-        bespokeCookieConsentBanner.style.display = 'flex';
+      //  bespokeCookieConsentBanner.style.display = 'flex';
 
         const bespokeCookieConsentAcceptButton = document.getElementById('bespoke-cookie-consent-accept');
         bespokeCookieConsentAcceptButton.addEventListener('click', () => {
@@ -169,10 +169,10 @@
         bespokeCookieConsentDeclineButton.addEventListener('click', () => {
             bespokeCookieConsentBanner.style.display = 'none';
         });
-    }
-    else{
-        bespokeCookieConsentBanner.style.display = 'none';
-    }
+   // }
+    //else{
+   //     bespokeCookieConsentBanner.style.display = 'none';
+  //  }
 </script>
 
 <div class="bg-banner">

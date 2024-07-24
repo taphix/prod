@@ -4,8 +4,8 @@ const cookiesBox = document.querySelector('.cookies'),
 
 // ---- ---- Show ---- ---- //
 const executeCodes = () => {
-    if (document.cookie.includes('aviator')) return;
-    cookiesBox.classList.add('show');
+   // if (document.cookie.includes('aviator')) return;
+  //  cookiesBox.classList.add('show');
 
     // ---- ---- Button ---- ---- //
     buttons.forEach((button) => {
