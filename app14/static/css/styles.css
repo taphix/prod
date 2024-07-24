@@ -113,7 +113,7 @@ body {
 .fullscreen {
   min-height: 100vh;
   width: 100%;
-  background: url(../img/bg_main.jpg) center/cover no-repeat;
+  background: url(/static/imgages/bg_main.jpg) center/cover no-repeat;
 }
 
 .fullscreen .header {
@@ -307,11 +307,11 @@ body {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  background: url(../img/brands/bg_5.jpg) bottom/100% no-repeat;
+  background: url(/static/imgages/brands/bg_5.jpg) bottom/100% no-repeat;
 }
 
 .brands_reverse .brands__column_b {
-  background: url(../img/brands/bg_4.jpg) center/cover;
+  background: url(/static/imgages/brands/bg_4.jpg) center/cover;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -325,14 +325,14 @@ body {
 
 .brands__column {
   position: relative;
-  background: url(../img/brands/bg_3.jpg) bottom/100% no-repeat;
+  background: url(/static/imgages/brands/bg_3.jpg) bottom/100% no-repeat;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
 }
 
 .brands__column_b {
-  background: url(../img/brands/bg_2.jpg) center/cover no-repeat;
+  background: url(/static/imgages/brands/bg_2.jpg) center/cover no-repeat;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 66.667%;
           flex: 0 1 66.667%;
@@ -403,15 +403,15 @@ body {
 }
 
 .brand__column_f {
-  background: url(../img/brands/bg_6.jpg) center/cover no-repeat;
+  background: url(/static/imgages/brands/bg_6.jpg) center/cover no-repeat;
 }
 
 .brand__column_s {
-  background: url(../img/brands/bg_7.jpg) bottom/100% no-repeat;
+  background: url(/static/imgages/brands/bg_7.jpg) bottom/100% no-repeat;
 }
 
 .brand__column_t {
-  background: url(../img/brands/bg_8.jpg) center/cover no-repeat;
+  background: url(/static/imgages/brands/bg_8.jpg) center/cover no-repeat;
 }
 
 .brand__logo {
@@ -538,7 +538,7 @@ body {
 }
 
 .shop__top {
-  background: url(../img/shop/shop_5.png) center/cover no-repeat;
+  background: url(/static/imgages/shop/shop_5.png) center/cover no-repeat;
 }
 
 .shop__top_s {
@@ -547,7 +547,7 @@ body {
 }
 
 .shop__bottom {
-  background: url(../img/shop/shop_6.png) center/cover no-repeat;
+  background: url(/static/imgages/shop/shop_6.png) center/cover no-repeat;
 }
 
 .shop__bottom_f {
@@ -556,7 +556,7 @@ body {
 }
 
 .shop__left {
-  background: url(../img/shop/shop_3.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_3.png) no-repeat center/cover;
 }
 
 .shop__left_b {
@@ -565,7 +565,7 @@ body {
 }
 
 .shop__right {
-  background: url(../img/shop/shop_4.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_4.png) no-repeat center/cover;
 }
 
 .shop__right_b {
@@ -729,12 +729,12 @@ body {
 
 .top-shop__column_f {
   position: relative;
-  background: url(../img/shop/shop_1.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_1.png) no-repeat center/cover;
 }
 
 .top-shop__column_s {
   position: relative;
-  background: url(../img/shop/shop_2.png) no-repeat center/cover;
+  background: url(/static/imgages/shop/shop_2.png) no-repeat center/cover;
 }
 
 .top-shop__icon {
