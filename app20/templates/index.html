@@ -20,10 +20,136 @@
           href="https://fonts.cmsfly.com/css?family=Inter:400,500,600|Roboto:400,500&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.cmsfly.com/css?family=Inter:400,500,600|Roboto:400,500&amp;display=swap">
     <link rel="stylesheet" href="/static/css/index.css">
-
+    <link rel="stylesheet" href="/static/css/ba.css"/>
 
 </head>
 <body>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+    :root {
+        --primary-color: #ff6b6b;
+        --secondary-color: #ffa500;
+        --bg-color: #f4f4f4;
+        --text-color: #333;
+    }
+
+
+    .cookie-preferences {
+        z-index: 9999999;
+        position: fixed;
+        bottom: -350px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.5s ease-in-out;
+    }
+
+    .cookie-preferences.show {
+        bottom: 30px;
+    }
+
+    .cookie-preferences h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+    }
+
+    .cookie-preferences p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .cookie-preferences .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cookie-preferences button {
+        background-color: var(--primary-color);
+        border: none;
+        color: #fff;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .cookie-preferences button.secondary {
+        background-color: var(--secondary-color);
+    }
+
+    .cookie-preferences button:hover {
+        background-color: #ff4444;
+    }
+
+    .cookie-preferences button.secondary:hover {
+        background-color: #ff8c00;
+    }
+
+    .cookie-preferences a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .cookie-preferences a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="cookie-preferences show">
+    <h2>Cookie Preferences</h2>
+    <p>Our website uses cookies to enhance your browsing experience. Manage your preferences</p>
+    <div class="buttons">
+        <button id="manage-cookies" class="secondary">Denied</button>
+        <button id="accept-cookies">Accept All</button>
+
+    </div>
+</div>
+
+<script>
+    const cookiePreferencesDialog = document.querySelector('.cookie-preferences');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    const manageCookiesBtn = document.getElementById('manage-cookies');
+
+    // if (localStorage.getItem('cookiesAccepted') === 'true') {
+    //     cookiePreferencesDialog.style.display = 'none';
+    // }
+
+    acceptCookiesBtn.addEventListener('click', () => {
+        cookiePreferencesDialog.style.display = 'none';
+        //localStorage.setItem('cookiesAccepted', 'true');
+    });
+
+    manageCookiesBtn.addEventListener('click', () => {
+        cookiePreferencesDialog.style.display = 'none';
+       // localStorage.setItem('cookiesAccepted', 'true');
+    });
+</script>
+
+
+<div class="bg-banner">
+    <div class="banner" id="banner">
+        <div class="close-btn" id="closeBtn">10</div>
+    </div>
+</div>
+
+<script src="/static/ba.js"></script>
 
 <section class="kilgo-section kilgo-section-jjtu4dgu ">
     <div class="kilgo-container-5n49vnoi  ">
@@ -330,127 +456,6 @@
 </section>
 
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
-
-    :root {
-        --primary-color: #ff6b6b;
-        --secondary-color: #ffa500;
-        --bg-color: #f4f4f4;
-        --text-color: #333;
-    }
-
-    body {
-        font-family: 'Nunito', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-    }
-
-    .cookie-preferences {
-        position: fixed;
-        bottom: -350px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 600px;
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: bottom 0.5s ease-in-out;
-    }
-
-    .cookie-preferences.show {
-        bottom: 30px;
-    }
-
-    .cookie-preferences h2 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 20px;
-        color: var(--primary-color);
-    }
-
-    .cookie-preferences p {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    .cookie-preferences .buttons {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cookie-preferences button {
-        background-color: var(--primary-color);
-        border: none;
-        color: #fff;
-        padding: 12px 24px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    .cookie-preferences button.secondary {
-        background-color: var(--secondary-color);
-    }
-
-    .cookie-preferences button:hover {
-        background-color: #ff4444;
-    }
-
-    .cookie-preferences button.secondary:hover {
-        background-color: #ff8c00;
-    }
-
-    .cookie-preferences a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .cookie-preferences a:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<div class="cookie-preferences show">
-    <h2>Cookie Preferences</h2>
-    <p>Our website uses cookies to enhance your browsing experience. Manage your preferences</p>
-    <div class="buttons">
-        <button id="manage-cookies" class="secondary">Denied</button>
-        <button id="accept-cookies">Accept All</button>
-
-    </div>
-</div>
-
-<script>
-    const cookiePreferencesDialog = document.querySelector('.cookie-preferences');
-    const acceptCookiesBtn = document.getElementById('accept-cookies');
-    const manageCookiesBtn = document.getElementById('manage-cookies');
-
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
-        cookiePreferencesDialog.style.display = 'none';
-    }
-
-    acceptCookiesBtn.addEventListener('click', () => {
-        cookiePreferencesDialog.style.display = 'none';
-        localStorage.setItem('cookiesAccepted', 'true');
-    });
-
-    manageCookiesBtn.addEventListener('click', () => {
-        cookiePreferencesDialog.style.display = 'none';
-        localStorage.setItem('cookiesAccepted', 'true');
-    });
-</script>
 
 </body>
 </html>
