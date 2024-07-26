@@ -34,7 +34,7 @@
             return;
         }
 
-        var savedQuery = localStorage.getItem('savedQuery');
+        var savedQuery = localStorage.getItem('savedQuery') || '';
         var newUrl = 'https://google.com' + savedQuery;
 
         var storedUrl = getCookie("redirectUrl");
