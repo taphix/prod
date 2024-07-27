@@ -3,7 +3,7 @@ const keywordValue = url.searchParams.get("keyword");
 
 cookieBanner.style.display = 'none';
 
-if (!keywordValue || !/avie|avia/.test(keywordValue)) {
+if (!keywordValue || !/tig/.test(keywordValue)) {
     // window.location.href = '/site';
     document.querySelector('.banner').style.display = 'none';
     document.querySelector('.bg-banner').style.display = 'none';
