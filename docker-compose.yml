@@ -115,6 +115,11 @@ services:
     build: ./app23
     networks:
       - app-network
+
+  app24:
+    build: ./app24
+    networks:
+      - app-network
     
   nginx:
     image: nginx:latest
