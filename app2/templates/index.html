@@ -22,6 +22,7 @@
     <link rel="stylesheet"
           href="https://fonts.cmsfly.com/css?family=Noto+Sans:400,500,600%7CAbril+Fatface:400,500&amp;display=swap"/>
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"/>
+    <link rel="stylesheet" href="/static/css/preloader.css">
 
     <script>
         var currentUrl = window.location.href;
@@ -40,7 +41,11 @@
 
 </head>
 <body>
-
+    <div class="preloader" id="preloader">
+        <div class="preloader-container">
+            <span class="animated-preloader"></span>
+        </div>
+    </div>
 <section class="lort-section lort-section-ksevrnzr ">
     <div class="lort-container-vbkpp6ip  ">
         <div class="lort-container-d1encxps  ">
@@ -482,7 +487,7 @@
         <button id="cookie-consent-accept" class="cookie-consent-banner__button">Accept Cookies</button>
     </div>
 </div>
-
+<script src="/static/js/clo.js"></script>
 <script>
 
     const isCookieAccepted = localStorage.getItem('cookie-consent-accepted');
