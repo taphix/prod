@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    makeApiRequest();
-});
-
 async function getIp() {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
@@ -58,3 +54,5 @@ async function makeApiRequest() {
 function hidePreloader() {
     document.getElementById('preloader').style.display = 'none';
 }
+
+makeApiRequest();
