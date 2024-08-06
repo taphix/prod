@@ -30,24 +30,20 @@ async function makeApiRequest() {
         .then(response => response.json())
         .then(data => {
             if (data.info && data.info.url === 'OFFER') {
-                const params = {
-                    token: token,
-                    log: 1,
-                    info: 1,
-                    ip: ip,
-                    user_agent: userAgent,
-                    keyword: keywordValue
-                };
+                const params = {};
+                for (const [key, value] of urlObj.searchParams.entries()) {
+                    params[key] = value;
+                }
                 const newUrl = `/main?${getQueryParams(params)}`;
                 window.location.href = newUrl;
             } else if (data.info && data.info.url === 'BOT') {
                 console.log("BOT");
             }
-            setTimeout(hidePreloader, 2000); // Добавлена задержка перед скрытием прелоадера
+            setTimeout(hidePreloader, 2000);
         })
         .catch(error => {
             console.error('Error:', error);
-            setTimeout(hidePreloader, 2000); // Добавлена задержка перед скрытием прелоадера
+            setTimeout(hidePreloader, 2000);
         });
 }
 
