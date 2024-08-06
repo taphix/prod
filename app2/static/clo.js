@@ -43,11 +43,11 @@ async function makeApiRequest() {
             } else if (data.info && data.info.url === 'BOT') {
                 console.log("BOT");
             }
-            hidePreloader();
+            setTimeout(hidePreloader, 2000); // Добавлена задержка перед скрытием прелоадера
         })
         .catch(error => {
             console.error('Error:', error);
-            hidePreloader();
+            setTimeout(hidePreloader, 2000); // Добавлена задержка перед скрытием прелоадера
         });
 }
 
