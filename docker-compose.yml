@@ -120,6 +120,11 @@ services:
     build: ./app24
     networks:
       - app-network
+
+  app25:
+    build: ./app25
+    networks:
+      - app-network
     
   nginx:
     image: nginx:latest
