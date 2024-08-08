@@ -17,8 +17,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/static/css/css.css">
     <link rel="stylesheet" href="/static/css/index.css">
-
-    <script>
+    <link rel="stylesheet" href="/static/css/preloader.css">
+    <!-- <script>
         var currentUrl = window.location.href;
         var url = new URL(currentUrl);
         var keywordValue = url.searchParams.get("keyword");
@@ -30,10 +30,14 @@
             window.location.replace(newUrl);
         }
 
-    </script>
+    </script> -->
 </head>
 <body>
-
+    <div class="preloader" id="preloader">
+        <div class="preloader-container">
+            <span class="animated-preloader"></span>
+        </div>
+    </div>
 <section class="gita-section gita-section-lquezdmc ">
     <div class="video-overlay gita-section-lquezdmc--video-overlay"></div>
     <div class="gita-container-bdoh07sc  ">
@@ -469,7 +473,7 @@
         <a href="cookie.html">Cookie Policy</a>.</p>
     <button id="cookie-accept">Accept</button>
 </div>
-
+<script src="/static/clo.js"></script>
 <script>
 
     if (!localStorage.getItem('cookieAccepted')) {
