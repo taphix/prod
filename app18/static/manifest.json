@@ -1,6 +1,6 @@
 {
-    "name": "Aviator India",
-    "short_name": "Aviator India",
+    "name": "Aviator by Spribe",
+    "short_name": "Aviator by Spribe",
     "start_url": "/pwa",
     "scope": "/",
     "display": "standalone",
