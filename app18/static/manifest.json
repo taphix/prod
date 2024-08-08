@@ -4,8 +4,8 @@
     "start_url": "/pwa",
     "scope": "/",
     "display": "standalone",
-    "theme_color": "#317EFB",
-    "background_color": "#317EFB",
+    "theme_color": "#ff2d32",
+    "background_color": "#ff2d32",
     "icons": [
       {
         "src": "/static/img/logo.png",
