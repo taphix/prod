@@ -132,6 +132,12 @@ services:
       - app-network
 
 
+  app27:
+    build: ./app27
+    networks:
+      - app-network
+
+
   nginx:
     image: nginx:latest
     volumes:
