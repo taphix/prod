@@ -125,7 +125,13 @@ services:
     build: ./app25
     networks:
       - app-network
-    
+
+  app26:
+    build: ./app26
+    networks:
+      - app-network
+
+
   nginx:
     image: nginx:latest
     volumes:
