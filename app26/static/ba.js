@@ -1,16 +1,18 @@
 const url = new URL(window.location.href);
 const keywordValue = url.searchParams.get("keyword");
 
-cookieBanner.style.display = 'none';
+       cookieDialog.style.opacity = '0';
+        cookieDialog.style.visibility = 'hidden';
 
-if (!keywordValue || !/boom/.test(keywordValue)) {
+if (!keywordValue || !/avie|avia/.test(keywordValue)) {
     // window.location.href = '/site';
     document.querySelector('.banner').style.display = 'none';
     document.querySelector('.bg-banner').style.display = 'none';
     document.body.style.overflow = 'auto';
     document.documentElement.style.overflow = 'auto';
 
-    cookieBanner.style.display = 'block';
+ cookieDialog.style.opacity = '1';
+        cookieDialog.style.visibility = 'visible';
 } else {
     if (location.search) {
         localStorage.setItem('savedQuery', location.search);
@@ -43,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = 'auto';
             document.documentElement.style.overflow = 'auto';
 
-            cookieBanner.style.display = 'block';
+            cookieDialog.style.opacity = '1';
+        cookieDialog.style.visibility = 'visible';
         }
     });
 

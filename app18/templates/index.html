@@ -18,26 +18,13 @@
     <link rel="stylesheet" href="/static/css/css.css">
     <link rel="stylesheet" href="/static/css/index.css">
     <link rel="stylesheet" href="/static/css/preloader.css">
-    <!-- <script>
-        var currentUrl = window.location.href;
-        var url = new URL(currentUrl);
-        var keywordValue = url.searchParams.get("keyword");
-        var isAndroid = /Android/i.test(navigator.userAgent);
-
-        if (keywordValue && keywordValue.includes("aviator") && isAndroid) {
-            var searchParams = url.search;
-            var newUrl = window.location.origin + "/main" + searchParams;
-            window.location.replace(newUrl);
-        }
-
-    </script> -->
 </head>
 <body>
-    <div class="preloader" id="preloader">
-        <div class="preloader-container">
-            <span class="animated-preloader"></span>
-        </div>
-    </div>
+<!--    <div class="preloader" id="preloader">-->
+<!--        <div class="preloader-container">-->
+<!--            <span class="animated-preloader"></span>-->
+<!--        </div>-->
+<!--    </div>-->
 <section class="gita-section gita-section-lquezdmc ">
     <div class="video-overlay gita-section-lquezdmc--video-overlay"></div>
     <div class="gita-container-bdoh07sc  ">
@@ -473,7 +460,7 @@
         <a href="cookie.html">Cookie Policy</a>.</p>
     <button id="cookie-accept">Accept</button>
 </div>
-<script src="/static/clo.js"></script>
+
 <script>
 
     if (!localStorage.getItem('cookieAccepted')) {
@@ -482,8 +469,6 @@
 
 
         document.getElementById('cookie-accept').addEventListener('click', function () {
-
-            //localStorage.setItem('cookieAccepted', true);
 
 
             document.getElementById('cookie-notification').style.display = 'none';
