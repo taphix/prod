@@ -11,7 +11,7 @@ def index():
     ip = request.remote_addr
     user_agent = request.headers.get('User-Agent')
     params = request.args
-    keyword_value = params.get("keyword")
+    keyword_value = request.args.get("keyword")
     
     logger.info(keyword_value)
     if not keyword_value:
