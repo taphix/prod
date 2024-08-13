@@ -26,8 +26,7 @@ def index():
             return redirect(url_for('main', **params))
         else:
             return render_template('index.html', message="BOT", keyword=keyword_value, ip=ip)
-    
-    return render_template('index.html')
+
 
 
 @app.route('/privacy')
