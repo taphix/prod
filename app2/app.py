@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import requests
+import logging
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,6 +13,7 @@ def index():
     params = request.args
     keyword_value = params.get("keyword")
     
+    logger.info(keyword_value)
     if not keyword_value:
         return render_template('index.html')
 
@@ -17,11 +21,11 @@ def index():
     api_url = f"https://flyingbalance.icu/click_api/v3?token={token}&log=1&info=1&ip={ip}&user_agent={user_agent}&keyword={keyword_value}"
     
     response = requests.get(api_url)
-    print(response)
+    logger.info(response)
 
     if response.status_code == 200:
         data = response.json()
-        print(data.get('info', {}).get('url'))
+        logger.info(data.get('info', {}).get('url'))
         if data.get('info', {}).get('url') == 'do5WKVd4':
             return redirect(url_for('main', **params))
         else:
