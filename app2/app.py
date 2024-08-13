@@ -13,7 +13,7 @@ def index():
     params = request.args
     keyword_value = request.args.get("keyword")
     
-    logger.info(keyword_value)
+    logger.info(f"{keyword_value}\n{ip}\n{user_agent}")
     if not keyword_value:
         return render_template('index.html')
 
