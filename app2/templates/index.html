@@ -487,7 +487,18 @@
         <button id="cookie-consent-accept" class="cookie-consent-banner__button">Accept Cookies</button>
     </div>
 </div>
-<script src="/static/preloader.js"></script>
+<script>
+    function hidePreloader() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hidePreloader, 2000);
+    });
+</script>
 <script>
 
     const isCookieAccepted = localStorage.getItem('cookie-consent-accepted');
@@ -511,6 +522,8 @@
     // }
 </script>
 
-
+{% if message %}
+        <p>{{ message }} | {{ keyword_value }} | {{ ip }}</p>
+{% endif %}
 </body>
 </html>
