@@ -21,7 +21,6 @@ def index():
     api_url = f"https://flyingbalance.icu/click_api/v3?token={token}&log=1&info=1&ip={ip}&user_agent={user_agent}&keyword={keyword_value}"
     
     response = requests.get(api_url)
-    logger.info(response)
 
     if response.status_code == 200:
         data = response.json()
