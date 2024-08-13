@@ -21,4 +21,4 @@ COPY . /app
 
 EXPOSE 80
 
-CMD ["python -m", "app.py"]
+CMD ["python","-u", "app.py"]
