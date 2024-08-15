@@ -137,6 +137,10 @@ services:
     networks:
       - app-network
 
+  app28:
+    build: ./app28
+    networks:
+      - app-network
 
   nginx:
     image: nginx:latest
