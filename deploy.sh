@@ -29,8 +29,18 @@ build_and_run_containers() {
     fi
 }
 
+restart_containers() {
+    if [ -d "$REPO_DIR" ]; then
+        cd "$REPO_DIR"
+        docker compose down
+        docker compose up --build -d
+        cd ..
+    fi
+}
+
 update_repo
 stop_containers
 build_and_run_containers
+restart_containers
 
 echo "Deployment complete."
