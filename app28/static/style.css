@@ -1,0 +1,364 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.checkmark {
+  color: #4caf50;
+  /* Зеленый цвет */
+  font-size: 40px;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  background-color: black;
+}
+
+
+
+
+body #openModalBtn1 {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  border: 3px solid #7AC96A;
+  background: #28A809;
+  border-radius: 10px;
+  height: 40px;
+}
+
+
+body #install {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  border: 3px solid #7AC96A;
+  background: #28A809;
+  border-radius: 10px;
+  height: 40px;
+}
+
+body #open {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  border: 3px solid red;
+  background: red;
+  border-radius: 10px;
+  height: 40px;
+}
+
+
+.light {
+  font-family: "Onest", sans-serif;
+  background-color: #CFCFCF;
+}
+
+.container {
+  max-width: 350px;
+  margin: auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body #openModalBtn2 {
+  width: 160px;
+  height: 40;
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  border: 3px solid #7AC96A;
+  background: #28A809;
+  border-radius: 10px;
+  height: 40px;
+}
+
+body .installBtn1 {
+  margin-right: 0px  !important;
+
+  margin-top: 0px  !important;
+  margin-left: 0px  !important;
+  width: 160px !important;
+  max-width: 350px!important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  height: 40px !important;
+}
+.header {
+  width: 100%;
+  padding-bottom: 15px;
+  position: relative;
+}
+.header .img-header {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 25px 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header .header-cont {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  max-width: 350px;
+  margin: auto;
+  bottom: 45px;
+  display: flex;
+  position: absolute;
+  gap: 25px;
+}
+.header .header-cont img {
+  width: 150px;
+  height: 150px;
+}
+.header .header-cont .header-cont-text {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+}
+.header .header-cont .header-cont-text h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #E40639;
+  text-transform: uppercase;
+}
+.header .header-cont .header-cont-text .tigerh2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFBB00;
+}
+.header .header-cont .header-cont-text p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.p1 {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.lightp1 {
+  color: #000000;
+}
+
+.swiper-container {
+  padding-bottom: 140px;
+  width: 100%;
+  max-width: 600px;
+  /* Ограничить ширину контейнера для примера */
+  overflow: hidden;
+  /* Скрыть все, что выходит за пределы контейнера */
+  margin: auto;
+  /* Центрировать контейнер */
+  padding-top: 20px;
+  /* Добавить верхний отступ */
+}
+
+.swiper-wrapper {
+  overflow: visible;
+  /* Разрешить переполнение содержимого */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  background: transparent;
+  transition: margin-top 0.3s ease;
+  /* Плавный переход для margin-top */
+  height: 200px;
+  /* Начальная высота слайда */
+  width: 100%;
+  /* Занимать всю ширину контейнера */
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.swiper-slide-active {
+  margin-top: -20px;
+  /* Поднять активный слайд вверх */
+  height: 220px;
+  /* Увеличить высоту активного слайда */
+}
+
+.footer {
+  z-index: 33;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  height: 100px;
+  padding: 10px 0px;
+  background: #1C1C1C;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.footer button {
+  width: 160px;
+  height: 40px;
+}
+.footer .btn1 {
+  border-radius: 10px;
+  border: 3px solid #7AC96A;
+  background: #28A809;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer .btn2 {
+  border-radius: 10px;
+  border: 3px solid #FFBD4D;
+  background: #E59409;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.footerlight {
+  background: #F0EDED;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  /* Скрыть модальное окно по умолчанию */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(8, 8, 8, 0.8);
+}
+
+/* Стили для содержимого модального окна */
+.modal-content {
+  background: #1C1C1C;
+  margin: 15% auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 80%;
+  border-radius: 15px;
+}
+.modal-content p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.modal-content .loader-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+.modal-content .loader {
+  border: 20px solid #000;
+  border-radius: 50%;
+  border-top: 20px solid #28A809;
+  width: 100%;
+  height: 100%;
+  animation: spinner 4s linear infinite;
+}
+.modal-content .number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.modal-content .line {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  background: #28A809;
+  height: 3px;
+  width: 30px;
+}
+
+.modallight {
+  background: #CFCFCF;
+}
+.modallight p {
+  color: #000;
+}
+.modallight .number {
+  color: #000;
+}/*# sourceMappingURL=style.css.map */
