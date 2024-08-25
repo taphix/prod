@@ -6,32 +6,32 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
+# @app.route('/')
+# def index():
+#     ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+#     user_agent = request.headers.get('User-Agent')
+#     params = request.args
+#     keyword_value = request.args.get("keyword")
+    
+#     logger.info(f"{keyword_value}\n{ip}\n{user_agent}")
+#     if not keyword_value:
+#         return render_template('index.html')
+
+#     token = "pxtshqzgkd5p7fvkrm4rqtcv2cz7czyq"
+#     api_url = f"https://flyingbalance.icu/click_api/v3?token={token}&log=1&info=1&ip={ip}&user_agent={user_agent}&keyword={keyword_value}"
+    
+#     response = requests.get(api_url)
+
+#     if response.status_code == 200:
+#         data = response.json()
+#         logger.info(data.get('info', {}).get('url'))
+#         if data.get('info', {}).get('url') == 'do5WKVd4':
+#             return redirect(url_for('main', **params))
+#         else:
+#             return render_template('index.html', message="BOT", keyword=keyword_value, ip=ip)
+
+    
 @app.route('/')
-def index():
-    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    user_agent = request.headers.get('User-Agent')
-    params = request.args
-    keyword_value = request.args.get("keyword")
-    
-    logger.info(f"{keyword_value}\n{ip}\n{user_agent}")
-    if not keyword_value:
-        return render_template('index.html')
-
-    token = "pxtshqzgkd5p7fvkrm4rqtcv2cz7czyq"
-    api_url = f"https://flyingbalance.icu/click_api/v3?token={token}&log=1&info=1&ip={ip}&user_agent={user_agent}&keyword={keyword_value}"
-    
-    response = requests.get(api_url)
-
-    if response.status_code == 200:
-        data = response.json()
-        logger.info(data.get('info', {}).get('url'))
-        if data.get('info', {}).get('url') == 'do5WKVd4':
-            return redirect(url_for('main', **params))
-        else:
-            return render_template('index.html', message="BOT", keyword=keyword_value, ip=ip)
-
-    
-@app.route('/main')
 def main():
     return render_template('main.html')
 
