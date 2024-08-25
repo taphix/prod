@@ -8,7 +8,7 @@
   "background_color": "#ff2d2d",
   "icons": [
     {
-      "src": "/static/img/logo.png",
+      "src": "/static/img/icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
