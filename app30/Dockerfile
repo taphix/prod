@@ -16,6 +16,7 @@ RUN apt-get update \
 RUN pip install --no-cache-dir Flask==3.0.2
 RUN pip install --no-cache-dir Werkzeug==3.0.1
 RUN pip install --no-cache-dir Jinja2==3.1.3
+RUN pip install --no-cache-dir requests=2.32.3
 
 COPY . /app
 
