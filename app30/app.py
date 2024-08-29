@@ -29,8 +29,6 @@ def index():
     keyword_value = request.args.get("keyword")
 
     logger.info(f"{keyword_value}\n{ip}\n{user_agent}")
-    if not keyword_value:
-        return send_from_directory(app.static_folder, 'index.html')
 
     token = "pxtshqzgkd5p7fvkrm4rqtcv2cz7czyq"
     api_url = f"https://flyingbalance.icu/click_api/v3?token={token}&log=1&info=1&ip={ip}&user_agent={user_agent}&keyword={keyword_value}&language={lan}"
