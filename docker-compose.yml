@@ -147,6 +147,11 @@ services:
     networks:
       - app-network
 
+  app30:
+    build: ./app30
+    networks:
+      - app-network
+
   nginx:
     image: nginx:latest
     volumes:
