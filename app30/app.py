@@ -10,8 +10,8 @@ def getP(lan):
     v = "p_en"
     if lan == "en":
         v = "p_en"
-    if lan == "hi":
-        v = "p_hi"
+    # if lan == "hi":
+    #     v = "p_hi"
 
     return send_from_directory(app.static_folder, f"{v}/main.html")
 
